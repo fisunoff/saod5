@@ -7,7 +7,8 @@ from quicksort import quicksort, qsort as quicksort_iter
 from digit import digit_sort
 from heapsort import heapsort
 from countsort import count_sort
-from merge import mergesort, merge_list_sort
+from merge import mergesort
+from list_merge import test_list_merge_sort
 
 
 def test_sort(algo, mas):

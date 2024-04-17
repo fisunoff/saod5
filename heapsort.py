@@ -1,3 +1,7 @@
+import copy
+from datetime import datetime
+
+
 def heapsort(mas):
     build_max_heap(mas)
     for i in range(len(mas) - 1, 0, -1):
@@ -37,3 +41,11 @@ def max_heapify(mas, index, size):
     if largest != index:
         mas[largest], mas[index] = mas[index], mas[largest]
         max_heapify(mas, largest, size)
+
+
+def test_heap(mas):
+    mas_t = copy.copy(mas)
+    start = datetime.now()
+    heapsort(mas_t)
+    end = datetime.now()
+    return end - start

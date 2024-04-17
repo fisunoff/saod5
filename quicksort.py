@@ -1,4 +1,6 @@
+import copy
 import random
+from datetime import datetime
 from random import choice
 from collections import deque
 
@@ -57,7 +59,9 @@ def quicksort_iter(mas):
 
     return mas
 
+
 MAXSTACK = 2048
+
 
 def qsort(mas):
     size = len(mas)
@@ -102,4 +106,17 @@ def qsort(mas):
     return mas
 
 
-qsort([random.randint(1, 10**7) for _ in range(10**6)])
+def test_quicksort(mas):
+    mas_t = copy.copy(mas)
+    start = datetime.now()
+    quicksort(mas_t)
+    end = datetime.now()
+    return end - start
+
+
+def test_quicksort_iter(mas):
+    mas_t = copy.copy(mas)
+    start = datetime.now()
+    qsort(mas_t)
+    end = datetime.now()
+    return end - start

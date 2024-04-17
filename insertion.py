@@ -1,4 +1,6 @@
+import copy
 from dataclasses import dataclass
+from datetime import datetime
 
 
 @dataclass
@@ -18,6 +20,10 @@ class Node:
 
 class InsertionSearcher:
     head = None
+
+    def __init__(self, mas):
+        for elem in mas:
+            self.push_back(elem)
 
     def sort(self):
         res = Node(self.head.value)
@@ -51,3 +57,12 @@ class InsertionSearcher:
 
     def __str__(self):
         return str(self.head)
+
+
+def test_insertion(mas):
+    mas_t = copy.copy(mas)
+    t = InsertionSearcher(mas_t)
+    start = datetime.now()
+    t.sort()
+    end = datetime.now()
+    return end - start

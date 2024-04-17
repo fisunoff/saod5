@@ -1,3 +1,7 @@
+import copy
+from datetime import datetime
+
+
 def count_sort(mas: list) -> list:
     """
     Сортировка подсчетом
@@ -11,3 +15,11 @@ def count_sort(mas: list) -> list:
         if cnt:
             res.extend([n for _ in range(cnt)])
     return res
+
+
+def test_count(mas):
+    mas_t = copy.copy(mas)
+    start = datetime.now()
+    count_sort(mas_t)
+    end = datetime.now()
+    return end - start

@@ -1,4 +1,5 @@
-import random
+import copy
+from datetime import datetime
 
 
 def mergesort(arr):
@@ -30,6 +31,14 @@ def mergesort(arr):
             arr[k] = right[j]
             j += 1
             k += 1
+
+
+def test_merge(mas):
+    mas_t = copy.copy(mas)
+    start = datetime.now()
+    mergesort(mas_t)
+    end = datetime.now()
+    return end - start
 
 
 class Node:

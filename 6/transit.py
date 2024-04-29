@@ -5,21 +5,7 @@ c) список ребер
 Будем делать для ориентированных графов
 """
 
-INF = 10**9
-
-test_matrix = [
-    [INF, 1, 2, 3],
-    [INF, INF, 5, 6],
-    [20, 30, INF, 8],
-    [INF, INF, INF, INF],
-]
-
-test_list = [
-    [0, 2, 8],
-    [0, 5, 7],
-    [5, 3, 1],
-    [3, 8, 55],
-]
+from const import INF, test_matrix, test_list
 
 
 def matrix_to_list(m):

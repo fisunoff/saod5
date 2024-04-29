@@ -1,4 +1,5 @@
-INF = 10**18
+from const import a, INF
+from utils import get_nodes_from_nodes_list
 
 
 def get_min(R, U):
@@ -19,10 +20,7 @@ def prima(graph):
     :param graph: список ребер
     :return: список ребер
     """
-    nodes = set()
-    for l, x, y in graph:
-        nodes.add(x)
-        nodes.add(y)
+    nodes = get_nodes_from_nodes_list(graph)
     n = len(nodes)
     u = {0}
     t = []
@@ -38,7 +36,5 @@ def prima(graph):
     return t
 
 
-a = [(13, 1, 2), (18, 1, 3), (17, 1, 4), (14, 1, 5), (22, 1, 6),
-     (26, 2, 3), (19, 2, 5), (30, 3, 4), (22, 4, 6)]
-
-print(*prima(a))
+if __name__ == '__main__':
+    print(*prima(a))
